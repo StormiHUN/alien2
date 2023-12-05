@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alien2</title>
+</head>
+<style>
+    body{
+        background-color: coral;
+    }
+    #kozep{
+        margin: 0px auto;
+        background-color: white;
+        border: 1px solid black;
+        padding: 10px;
+        width: 200px;
+    }
+</style>
+<script>
+
+    function valt(id,cur){
+        let temp = cur + 1
+        if(cur == 4){
+            document.getElementById(id).src = "alien" + 1 + ".png"
+            document.getElementById(id).setAttribute("onclick","valt('"+id +"',"+1+")")
+        }
+        else{
+            document.getElementById(id).src = "alien" + temp + ".png"
+            document.getElementById(id).setAttribute("onclick","valt('"+id+"',"+temp+")")
+        }
+    }
+
+</script>
+<body>
+    <div id="kozep">
+        <img id="kep1" src="alien1.png" onclick="valt('kep1',1)">
+        <img id="kep2" src="alien2.png" onclick="valt('kep2',2)">
+        <img id="kep3" src="alien3.png" onclick="valt('kep3',3)">
+        <img id="kep4" src="alien4.png" onclick="valt('kep4',4)">
+    </div>
+</body>
+</html>
